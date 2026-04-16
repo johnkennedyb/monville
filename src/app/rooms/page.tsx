@@ -3,10 +3,16 @@ import Link from 'next/link'
 import { prisma } from '@/lib/db'
 import { Bed, Users, Maximize } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+
 async function getAllRooms() {
-  return await prisma.room.findMany({
-    where: { isAvailable: true },
-  })
+  try {
+    return await prisma.room.findMany({
+      where: { isAvailable: true },
+    })
+  } catch {
+    return []
+  }
 }
 
 export default async function RoomsPage() {
@@ -50,7 +56,7 @@ export default async function RoomsPage() {
                 <div className="p-6">
                   <h3 className="font-heading text-2xl text-primary mb-3">{room.name}</h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">{room.description}</p>
-                  
+
                   <div className="flex gap-6 text-sm text-gray-500 mb-4 pb-4 border-b">
                     <span className="flex items-center gap-2">
                       <Bed size={16} className="text-accent" />
@@ -74,8 +80,8 @@ export default async function RoomsPage() {
                     ))}
                   </div>
 
-                  <Link 
-                    href={`/rooms/${room.id}`} 
+                  <Link
+                    href={`/rooms/${room.id}`}
                     className="btn btn-primary w-full"
                   >
                     Book Now

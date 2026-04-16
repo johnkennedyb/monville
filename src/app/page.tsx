@@ -3,11 +3,17 @@ import Image from 'next/image'
 import { prisma } from '@/lib/db'
 import { ChevronDown, Award, Clock, MapPin } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+
 async function getRooms() {
-  return await prisma.room.findMany({
-    where: { isAvailable: true },
-    take: 3,
-  })
+  try {
+    return await prisma.room.findMany({
+      where: { isAvailable: true },
+      take: 3,
+    })
+  } catch {
+    return []
+  }
 }
 
 export default async function HomePage() {
@@ -97,8 +103,8 @@ export default async function HomePage() {
                 A Boutique Hotel Experience in the Heart of Montreal
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Monville Hotel offers a unique blend of contemporary elegance and timeless charm. 
-                Located in the vibrant heart of Montreal, our boutique hotel provides an intimate 
+                Monville Hotel offers a unique blend of contemporary elegance and timeless charm.
+                Located in the vibrant heart of Montreal, our boutique hotel provides an intimate
                 atmosphere where every detail is crafted for your comfort and enjoyment.
               </p>
               <div className="grid grid-cols-3 gap-8 mt-10">
