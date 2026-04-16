@@ -31,7 +31,7 @@ export function BookingForm({ room, unavailableDates }: BookingFormProps) {
   const handleCreateBooking = async () => {
     setLoading(true)
     setError('')
-    
+
     try {
       const res = await fetch('/api/bookings', {
         method: 'POST',
@@ -50,7 +50,7 @@ export function BookingForm({ room, unavailableDates }: BookingFormProps) {
       })
 
       if (!res.ok) throw new Error('Failed to create booking')
-      
+
       return await res.json()
     } catch (err) {
       setError('Something went wrong. Please try again.')
@@ -62,9 +62,9 @@ export function BookingForm({ room, unavailableDates }: BookingFormProps) {
   const handleApprove = async (data: any, actions: any) => {
     try {
       const order = await actions.order.capture()
-      
+
       const booking = await handleCreateBooking()
-      
+
       await fetch('/api/bookings/confirm', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -205,6 +205,7 @@ export function BookingForm({ room, unavailableDates }: BookingFormProps) {
           <PayPalButtons
             createOrder={(_, actions) => {
               return actions.order.create({
+                intent: 'CAPTURE',
                 purchase_units: [
                   {
                     amount: {
