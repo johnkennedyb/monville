@@ -1,7 +1,7 @@
 'use client'
 
 import { formatCurrency } from '@/lib/utils'
-import { Phone, MessageCircle, Mail } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 
 interface RoomInfo {
   name: string
@@ -61,18 +61,6 @@ export function BookingForm({ room }: BookingFormProps) {
             </div>
           </a>
 
-          <a
-            href="mailto:reservations@monville.com"
-            className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-              <Mail size={20} className="text-white" />
-            </div>
-            <div>
-              <p className="font-semibold text-primary text-sm">Email</p>
-              <p className="text-gray-600 text-sm">reservations@monville.com</p>
-            </div>
-          </a>
         </div>
       </div>
 
