@@ -1,11 +1,18 @@
 'use client'
 
-import { Room } from '@prisma/client'
 import { formatCurrency } from '@/lib/utils'
 import { Phone, MessageCircle, Mail } from 'lucide-react'
 
+interface RoomInfo {
+  name: string
+  price: number
+  size: string
+  bedType: string
+  maxGuests: number
+}
+
 interface BookingFormProps {
-  room: Room
+  room: RoomInfo
   unavailableDates: string[]
 }
 
