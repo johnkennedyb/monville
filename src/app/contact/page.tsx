@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { MapPin, Phone, Clock, MessageCircle } from 'lucide-react'
 
 export default function ContactPage() {
   return (
@@ -20,12 +20,11 @@ export default function ContactPage() {
             {/* Info */}
             <div>
               <h2 className="font-heading text-3xl text-primary mb-8">Get in Touch</h2>
-              
+
               <div className="space-y-6 mb-12">
                 {[
-                  { icon: MapPin, title: 'Address', lines: ['1041 Rue de Bleury', 'Montreal, QC H2Z 1M7', 'Canada'] },
-                  { icon: Phone, title: 'Phone', lines: ['+1 (514) 123-4567', '+1 (514) 123-4568'] },
-                  { icon: Mail, title: 'Email', lines: ['reservations@monville.com', 'info@monville.com'] },
+                  { icon: MapPin, title: 'Address', lines: ['Monville hotel Montreal Canada'] },
+                  { icon: Phone, title: 'Phone', lines: ['+1 (650) 281-6056 (Call & WhatsApp)'] },
                   { icon: Clock, title: 'Reception', lines: ['Open 24 Hours', 'Concierge Available'] },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
@@ -57,65 +56,58 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Form */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h2 className="font-heading text-2xl text-primary mb-6">Send a Message</h2>
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">First Name</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-accent focus:outline-none"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">Last Name</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-accent focus:outline-none"
-                      placeholder="Doe"
-                    />
-                  </div>
+            {/* Contact Actions */}
+            <div className="space-y-6">
+              <div className="bg-accent/10 border border-accent/30 rounded-lg p-6">
+                <h3 className="font-heading text-xl text-primary mb-4">Book Your Stay</h3>
+                <p className="text-gray-600 mb-6">
+                  Ready to experience Monville? Contact us directly to make your reservation and arrange payment.
+                </p>
+                <div className="space-y-4">
+                  <a
+                    href="tel:+16502816056"
+                    className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-primary">Call Us</p>
+                      <p className="text-gray-600">+1 (650) 281-6056</p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://wa.me/16502816056"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                      <MessageCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-primary">WhatsApp</p>
+                      <p className="text-gray-600">+1 (650) 281-6056</p>
+                    </div>
+                  </a>
                 </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-accent focus:outline-none"
-                    placeholder="john@example.com"
-                  />
+              </div>
+
+              <div className="bg-primary text-white p-6 rounded-lg">
+                <h3 className="font-heading text-lg mb-3">Payment Information</h3>
+                <p className="text-white/80 text-sm mb-4">
+                  For bookings and payments, please contact us directly at:
+                </p>
+                <div className="space-y-2 text-sm">
+                  <p className="flex items-center gap-2">
+                    <Phone size={16} className="text-accent" />
+                    <span>+1 (650) 281-6056</span>
+                  </p>
+                  <p className="text-white/60 text-xs mt-4">
+                    We accept bank transfers and other payment arrangements. Contact us for details.
+                  </p>
                 </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Phone</label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-accent focus:outline-none"
-                    placeholder="+1 (514) 123-4567"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Subject</label>
-                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-accent focus:outline-none">
-                    <option>General Inquiry</option>
-                    <option>Reservation Request</option>
-                    <option>Special Event</option>
-                    <option>Feedback</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
-                  <textarea
-                    rows={5}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-accent focus:outline-none"
-                    placeholder="How can we help you?"
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary w-full py-4">
-                  Send Message
-                </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>

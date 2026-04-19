@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { prisma } from '@/lib/db'
 import { ChevronDown, Award, Clock, MapPin } from 'lucide-react'
+import { AmenitiesGallery } from '@/components/AmenitiesGallery'
+import { HotelTeam } from '@/components/HotelTeam'
 
 export const dynamic = 'force-dynamic'
 
@@ -134,6 +136,12 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Hotel Management Team */}
+      <HotelTeam />
+
+      {/* Amenities Gallery */}
+      <AmenitiesGallery />
 
       {/* Featured Rooms */}
       <section className="section-padding">

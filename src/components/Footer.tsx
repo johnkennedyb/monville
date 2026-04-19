@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Facebook, Instagram, Twitter, Linkedin, ArrowUp, MapPin, Phone, Mail } from 'lucide-react'
+import { Facebook, Instagram, Twitter, Linkedin, ArrowUp, MapPin, Phone } from 'lucide-react'
 
 export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -45,15 +45,11 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70 text-sm break-words">
                 <MapPin size={18} className="text-accent flex-shrink-0 mt-0.5" />
-                <span className="break-words">1041 Rue de Bleury, Montreal, QC H2Z 1M7</span>
+                <span className="break-words">Monville hotel Montreal Canada</span>
               </li>
               <li className="flex items-center gap-3 text-white/70 text-sm break-all">
                 <Phone size={18} className="text-accent flex-shrink-0" />
-                <span>+1 (514) 123-4567</span>
-              </li>
-              <li className="flex items-center gap-3 text-white/70 text-sm break-all">
-                <Mail size={18} className="text-accent flex-shrink-0" />
-                <span>info@monville.com</span>
+                <a href="tel:+16502816056" className="hover:text-accent transition-colors">+1 (650) 281-6056</a>
               </li>
             </ul>
           </div>

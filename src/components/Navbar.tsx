@@ -22,18 +22,15 @@ export function Navbar() {
   ]
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'
+      }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex flex-col">
-            <span className={`font-heading text-2xl font-semibold tracking-wider ${
-              isScrolled ? 'text-accent' : 'text-accent'
-            }`}>Monville</span>
-            <span className={`text-[10px] uppercase tracking-[3px] ${
-              isScrolled ? 'text-gray-500' : 'text-white/80'
-            }`}>Hotel Montreal</span>
+            <span className={`font-heading text-2xl font-semibold tracking-wider ${isScrolled ? 'text-accent' : 'text-accent'
+              }`}>Monville</span>
+            <span className={`text-[10px] uppercase tracking-[3px] ${isScrolled ? 'text-gray-500' : 'text-white/80'
+              }`}>Hotel Montreal</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -41,25 +38,23 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-accent ${
-                  isScrolled ? 'text-gray-800' : 'text-white'
-                }`}
+                className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-accent ${isScrolled ? 'text-gray-800' : 'text-white'
+                  }`}
               >
                 {link.name}
               </Link>
             ))}
-            <a href="tel:+15141234567" className={`flex items-center gap-2 text-sm ${
-              isScrolled ? 'text-gray-800' : 'text-white'
-            }`}>
+            <a href="tel:+16502816056" className={`flex items-center gap-2 text-sm ${isScrolled ? 'text-gray-800' : 'text-white'
+              }`}>
               <Phone size={16} />
-              +1 (514) 123-4567
+              +1 (650) 281-6056
             </a>
             <Link href="/rooms" className="btn btn-primary text-sm py-2 px-6">
               Book Now
             </Link>
           </div>
 
-          <button 
+          <button
             className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
