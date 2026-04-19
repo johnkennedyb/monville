@@ -1,25 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { prisma } from '@/lib/db'
 import { ChevronDown, Award, Clock, MapPin } from 'lucide-react'
 import { AmenitiesGallery } from '@/components/AmenitiesGallery'
 import { HotelTeam } from '@/components/HotelTeam'
 
-export const dynamic = 'force-dynamic'
+const featuredRooms = [
+  { id: 1, name: 'Deluxe 201', description: 'Elegant comfort with city views and premium amenities. Perfect for business travelers or couples seeking a luxurious retreat.', price: 229, size: '28 m²', maxGuests: 2, bedType: '1 King Bed', amenities: 'City View, WiFi, Air Conditioning, Mini Bar, Room Service', imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80' },
+  { id: 2, name: 'Executive Suite 501', description: 'Spacious suite with separate living area and panoramic views. Ideal for extended stays or guests who desire extra space.', price: 399, size: '45 m²', maxGuests: 2, bedType: '1 King Bed', amenities: 'Panoramic View, WiFi, Air Conditioning, Living Room, Nespresso', imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80' },
+  { id: 3, name: 'Premium Suite 601', description: 'Ultimate luxury with premium finishes and exclusive lounge access. Experience the finest accommodations Montreal has to offer.', price: 549, size: '65 m²', maxGuests: 3, bedType: '1 King + Sofa Bed', amenities: 'Lounge Access, WiFi, Air Conditioning, Butler Service, Jacuzzi', imageUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=80' },
+]
 
-async function getRooms() {
-  try {
-    return await prisma.room.findMany({
-      where: { isAvailable: true },
-      take: 3,
-    })
-  } catch {
-    return []
-  }
-}
-
-export default async function HomePage() {
-  const rooms = await getRooms()
+export default function HomePage() {
+  const rooms = featuredRooms
 
   return (
     <>
