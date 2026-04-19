@@ -44,11 +44,11 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <a href="tel:+16502816056" className={`flex items-center gap-2 text-sm ${isScrolled ? 'text-gray-800' : 'text-white'
+            <span className={`flex items-center gap-2 text-sm ${isScrolled ? 'text-gray-800' : 'text-white'
               }`}>
               <Phone size={16} />
               +1 (650) 281-6056
-            </a>
+            </span>
             <Link href="/rooms" className="btn btn-primary text-sm py-2 px-6">
               Book Now
             </Link>

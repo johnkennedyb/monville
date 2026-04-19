@@ -55,8 +55,8 @@ export default function HomePage() {
       {/* Booking Bar */}
       <section id="booking" className="bg-primary -mt-16 relative z-30 py-8">
         <div className="container-custom">
-          <div className="bg-white p-6 rounded-lg shadow-xl">
-            <form className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+          <div className="bg-white p-4 md:p-6 rounded-lg shadow-xl">
+            <form className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 items-end">
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                   Check In

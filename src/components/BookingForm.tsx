@@ -1,7 +1,7 @@
 'use client'
 
 import { formatCurrency } from '@/lib/utils'
-import { Phone, MessageCircle } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 
 interface RoomInfo {
   name: string
@@ -34,19 +34,6 @@ export function BookingForm({ room }: BookingFormProps) {
 
         <div className="space-y-3">
           <a
-            href="tel:+16502816056"
-            className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-              <Phone size={20} className="text-primary" />
-            </div>
-            <div>
-              <p className="font-semibold text-primary text-sm">Call Us</p>
-              <p className="text-gray-600 text-sm">+1 (650) 281-6056</p>
-            </div>
-          </a>
-
-          <a
             href="https://wa.me/16502816056"
             target="_blank"
             rel="noopener noreferrer"
@@ -60,7 +47,6 @@ export function BookingForm({ room }: BookingFormProps) {
               <p className="text-gray-600 text-sm">+1 (650) 281-6056</p>
             </div>
           </a>
-
         </div>
       </div>
 

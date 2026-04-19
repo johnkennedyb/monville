@@ -65,18 +65,6 @@ export default function ContactPage() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="tel:+16502816056"
-                    className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-primary">Call Us</p>
-                      <p className="text-gray-600">+1 (650) 281-6056</p>
-                    </div>
-                  </a>
-                  <a
                     href="https://wa.me/16502816056"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -99,10 +87,10 @@ export default function ContactPage() {
                   For bookings and payments, please contact us directly at:
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p className="flex items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <Phone size={16} className="text-accent" />
                     <span>+1 (650) 281-6056</span>
-                  </p>
+                  </div>
                   <p className="text-white/60 text-xs mt-4">
                     We accept bank transfers and other payment arrangements. Contact us for details.
                   </p>
